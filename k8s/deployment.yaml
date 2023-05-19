@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: pipelines-demo-app
-  name: pipelines-demo-app
+    app: demo-spring-openshift
+  name: demo-spring-openshift
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pipelines-demo-app
+      app: demo-spring-openshift
   template:
     metadata:
       labels:
-        app: pipelines-demo-app
+        app: demo-spring-openshift
     spec:
       containers:
         - image: {image}
           imagePullPolicy: Always
-          name: pipelines-demo-app
+          name: demo-spring-openshift
           ports:
             - containerPort: 8080
               protocol: TCP
