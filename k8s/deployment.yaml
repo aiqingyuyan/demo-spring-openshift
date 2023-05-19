@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pipelines-demo-app
+  name: pipelines-demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pipelines-demo-app
+  template:
+    metadata:
+      labels:
+        app: pipelines-demo-app
+    spec:
+      containers:
+        - image: {image}
+          imagePullPolicy: Always
+          name: pipelines-demo-app
+          ports:
+            - containerPort: 8080
+              protocol: TCP
