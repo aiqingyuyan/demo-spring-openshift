@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: pipelines-demo-app
-  name: pipelines-demo-app
+    app: demo-spring-openshift
+  name: demo-spring-openshift
 spec:
   type: NodePort
   ports:
@@ -12,4 +12,4 @@ spec:
       targetPort: 8080
       protocol: TCP
   selector:
-    app: pipelines-demo-app
+    app: demo-spring-openshift
