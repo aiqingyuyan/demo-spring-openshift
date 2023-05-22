@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: demo-spring-openshift
-  name: demo-spring-openshift
+    app: {label-name}
+  name: {label-name}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-spring-openshift
+      app: {label-name}
   template:
     metadata:
       labels:
-        app: demo-spring-openshift
+        app: {label-name}
     spec:
       containers:
         - image: {image}
           imagePullPolicy: Always
-          name: demo-spring-openshift
+          name: {label-name}
           ports:
             - containerPort: 8080
               protocol: TCP
